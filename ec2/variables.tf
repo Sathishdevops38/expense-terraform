@@ -27,7 +27,7 @@ variable "domain_name" {
 variable "name" {
   type = map(string)
   default = {
-    ec1 = "database"
+    ec1 = "mysql"
     ec2 = "backend"
     ec3 = "frontend"
   }

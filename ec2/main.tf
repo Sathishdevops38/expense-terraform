@@ -17,7 +17,7 @@ resource "aws_instance" "this" {
 resource "aws_route53_record" "db" {
   count = var.num
   zone_id = var.zone_id
-  name    = "${element(values(var.name), count.index)}-${var.environment}.${var.domain_name}"
+  name    = "${element(values(var.name), count.index)}.${var.domain_name}"
   type    = "A"
   ttl     = 1
   # Logic: If the name is "frontend", use public_ip; otherwise, use private_ip
