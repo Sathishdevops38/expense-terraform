@@ -5,6 +5,7 @@ resource "aws_instance" "this" {
   subnet_id     = local.default_subnet[0]
   security_groups = [local.default_security_group]
   instance_type   = var.instance_type # Or any other desired instance type
+  user_data = file("ansible.sh")
   tags= merge(
     var.tags,
     local.common_tags,{
